@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+
 import { ParagraphProps } from './Paragraph.props';
 import styles from './Paragraph.module.css';
 
