@@ -3,21 +3,14 @@ import { useEffect, useState } from "react";
 import { Htag, Button, Paragraph, Tag, Rating } from "../components";
 
 export default function Home(): JSX.Element {
-  const [counter, setCounter] = useState<number>(0);
-
-  useEffect(() => {
-    console.log("Counter" + counter);
-    return function cleanUp() {
-      console.log("unmount" + counter);
-    };
-  }, []);
+  const [rating, setRating] = useState<number>(4);
   return (
     <>
-      <Htag tag="h1">{counter} </Htag>
-      <Button appearance="primary" arrow="right" onClick={() => setCounter((x) => x + 1)}>
+      <Htag tag="h1"> Header </Htag>
+      <Button appearance="primary" arrow="right">
         Кнопка
       </Button>
-      <Button appearance="ghost" arrow="right" onClick={() => setCounter((x) => x - 1)}>
+      <Button appearance="ghost" arrow="right">
         Кнопка
       </Button>
       <Paragraph size="p14">Маленький</Paragraph>
@@ -31,7 +24,8 @@ export default function Home(): JSX.Element {
         green
       </Tag>
       <Tag color="primary">lol</Tag>
-      <Rating rating={4} />
+      <Rating rating={4} isEditable />
+      <Rating rating={rating} isEditable setRating={setRating} />
     </>
   );
 }
