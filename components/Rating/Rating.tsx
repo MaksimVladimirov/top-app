@@ -23,6 +23,7 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: Rati
           onMouseEnter={() => changeDisplay(index + 1)}
           onMouseLeave={() => changeDisplay(rating)}
           onClick={() => onClick(index + 1)}
+          key="index"
         >
           <StarIcon
             tabIndex={isEditable ? 0 : -1}
