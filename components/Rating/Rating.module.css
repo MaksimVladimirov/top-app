@@ -1,0 +1,14 @@
+.filled svg {
+  fill: var(--primary);
+}
+.arrstars {
+  display: flex;
+}
+.star svg {
+  width: 20px;
+  height: auto;
+  margin-right: 5px;
+}
+.editable {
+  cursor: pointer;
+}
