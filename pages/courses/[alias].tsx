@@ -9,7 +9,7 @@ import { ProductModel } from "../../interfaces/product.interface";
 
 const firstCategory = 0;
 
-function Course({ products }: CourseProps): JSX.Element {
+function Course({ menu, page, products }: CourseProps): JSX.Element {
   return <>{products && products.length}</>;
 }
 
