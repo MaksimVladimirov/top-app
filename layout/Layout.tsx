@@ -11,10 +11,10 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <>
       <Header />
-      <div>
+      <main>
         <Sidebar />
         <div>{children}</div>
-      </div>
+      </main>
       <Footer />
     </>
   );
