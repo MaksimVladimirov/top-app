@@ -4,7 +4,7 @@ export interface ProductCharacteristic {
 }
 
 export interface ReviewModel {
-  _id: string;
+  id: string;
   name: string;
   title: string;
   description: string;
@@ -13,7 +13,7 @@ export interface ReviewModel {
 }
 
 export interface ProductModel {
-  _id: string;
+  id: string;
   categories: string[];
   tags: string[];
   title: string;

@@ -6,13 +6,13 @@ export enum TopLevelCategory {
 }
 
 export interface PageAdvantage {
-  _id: string;
+  id: string;
   title: string;
   description: string;
 }
 
-export interface HhData {
-  _id: string;
+export interface HeadHunterData {
+  id: string;
   count: number;
   juniorSalary: number;
   middleSalary: number;
@@ -22,7 +22,7 @@ export interface HhData {
 
 export interface PageModel {
   tags: string[];
-  _id: string;
+  id: string;
   secondCategory: string;
   alias: string;
   title: string;
@@ -35,5 +35,5 @@ export interface PageModel {
   advantages?: PageAdvantage[];
   createdAt: Date;
   updatedAt: Date;
-  hh?: HhData;
+  hh?: HeadHunterData;
 }
