@@ -8,7 +8,6 @@ import { FirstLevelMenuItem, PageItem } from "../../interfaces/menu.interface";
 import { AppContext } from "../../context/app.context";
 import { firstLevelMenu } from "../../helpers/helpers";
 
-
 export const Menu = (): JSX.Element => {
   const { menu, setMenu, firstCategory } = useContext(AppContext);
   const router = useRouter();
@@ -78,7 +77,7 @@ export const Menu = (): JSX.Element => {
 
   const buildThirdLevel = (pages: PageItem[], route: string) => {
     return pages.map((page) => (
-      <Link legacyBehavior href={`/${route}/${page.alias}`}>
+      <Link legacyBehavior key={page.id} href={`/${route}/${page.alias}`}>
         <a
           className={cn(styles.thirdLevel, {
             [styles.thirdLevelActive]: `/${route}/${page.alias}` === router.asPath,
