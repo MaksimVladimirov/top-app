@@ -1,6 +1,4 @@
-import cn from "classnames";
-
-import { HhDataProps } from "./hhData.props";
+import { HhDataProps } from "./HhData.props";
 import styles from "./HhData.module.css";
 import { Card } from "../Card/Card";
 import RateIcon from "./star_gray.svg";
