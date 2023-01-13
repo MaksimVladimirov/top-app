@@ -1,4 +1,4 @@
-import { Card, HhData, Htag, Tag } from "../../components";
+import { HhData, Htag, Tag } from "../../components";
 import { TopPageComponentProps } from "./TopPageComponent.props";
 import styles from "./TopPageComponent.module.css";
 import { TopLevelCategory } from "../../interfaces/page.interface";

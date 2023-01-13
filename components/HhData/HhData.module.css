@@ -76,6 +76,6 @@
 
   .salary > div:last-child {
     padding-bottom: 0;
-    border-top: none;
+    border-bottom: none;
   }
 }
