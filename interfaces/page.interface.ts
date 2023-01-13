@@ -35,5 +35,5 @@ export interface PageModel {
   advantages?: PageAdvantage[];
   createdAt: Date;
   updatedAt: Date;
-  hh: HeadHunterData;
+  hh?: HeadHunterData;
 }
