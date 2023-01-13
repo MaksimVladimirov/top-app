@@ -25,7 +25,7 @@ export interface PageModel {
   id: string;
   secondCategory: string;
   alias: string;
-  title: string;
+  title?: string;
   category: string;
   seoText?: string;
   tagsTitle: string;
@@ -35,5 +35,5 @@ export interface PageModel {
   advantages?: PageAdvantage[];
   createdAt: Date;
   updatedAt: Date;
-  hh?: HeadHunterData;
+  hh: HeadHunterData;
 }

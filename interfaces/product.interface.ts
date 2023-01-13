@@ -16,7 +16,7 @@ export interface ProductModel {
   id: string;
   categories: string[];
   tags: string[];
-  title: string;
+  title?: string;
   link: string;
   price: number;
   credit: number;
