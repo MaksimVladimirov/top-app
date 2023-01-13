@@ -7,7 +7,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
-        <Htag tag="h1">{page.title}</Htag>
+        <Htag tag="h1">{page?.title}</Htag>
         {products && (
           <Tag color="gray" size="m">
             {products.length}
@@ -15,9 +15,9 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
         )}
         <span>Сортировка</span>
       </div>
-      <div>{products && products.map((p) => <div key={p.id}>{p.title}</div>)}</div>
+      <div>{products && products.map((p) => <div key={p.id}>{p?.title}</div>)}</div>
       <div className={styles.hhTitle}>
-        <Htag tag="h2">Вакансии - {page.category}</Htag>
+        <Htag tag="h2">Вакансии - {page?.category}</Htag>
         <Tag color="red" size="m">
           hh.ru
         </Tag>
