@@ -22,7 +22,7 @@ export const Sort = ({ sort, setSort, className, ...props }: SortProps): JSX.Ele
           [styles.active]: sort === SortEnum.Price,
         })}
       >
-        <SortIcon className={styles.sortIcon} /> По&nbsp;цене
+        <SortIcon className={styles.sortIcon} /> По цене
       </span>
     </div>
   );

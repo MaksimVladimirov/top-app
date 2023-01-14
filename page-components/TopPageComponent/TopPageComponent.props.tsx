@@ -5,6 +5,6 @@ import { ProductModel } from "../../interfaces/product.interface";
 
 export interface TopPageComponentProps  {
   firstCategory: TopLevelCategory;
-  page: PageModel;
+  page: PageModel ;
   products: ProductModel[];
 }
