@@ -36,8 +36,9 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
         </Tag>
       </div>
 
-      {firstCategory === TopLevelCategory.Courses && page.hh && <HhData {...page.hh} />}
-      {page?.advantages && page?.advantages.length > 0 && (
+      {firstCategory === TopLevelCategory.Courses && page.hh && <HhData {...page?.hh} />}
+
+      {!!page?.advantages.length && (
         <>
           <Htag tag="h2">Преимущества</Htag>
           <Benefits advantages={page?.advantages} />

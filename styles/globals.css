@@ -28,3 +28,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+html {
+  font-size: 62.5%;
+}
