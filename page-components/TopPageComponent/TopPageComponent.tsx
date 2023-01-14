@@ -1,7 +1,8 @@
-import { Benefits, HhData, Htag, Paragraph, Tag } from "../../components";
+import { Benefits, HhData, Htag, Sort, Tag } from "../../components";
 import { TopPageComponentProps } from "./TopPageComponent.props";
 import styles from "./TopPageComponent.module.css";
 import { TopLevelCategory } from "../../interfaces/page.interface";
+import { SortEnum } from "../../components/Sort/Sort.props";
 
 export const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps): JSX.Element => {
   return (
@@ -13,7 +14,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
             {products.length}
           </Tag>
         )}
-        <span>Сортировка</span>
+        <Sort sort={SortEnum.Rating} setSort={() => {}} />
       </div>
       <div>{products && products.map((p) => <div key={p.id}>{p?.title}</div>)}</div>
       <div className={styles.hhTitle}>
@@ -30,7 +31,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
           <Benefits advantages={page.advantages} />
         </>
       )}
-      {page.seoText && <Paragraph>{page.seoText}</Paragraph>}
+      {page.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{ __html: page.seoText }} />}
       <Htag tag="h2">Получаемые навыки</Htag>
       {page.tags.map((tag) => (
         <Tag key={tag} color="primary">
