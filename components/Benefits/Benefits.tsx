@@ -6,7 +6,7 @@ export const Benefits = ({ advantages }: BenefitsProps): JSX.Element => {
   return (
     <div>
       {advantages.map((advantage) => (
-        <section key={advantage.id} className={styles.advantage}>
+        <section key={advantage.title} className={styles.advantage}>
           <GreenMark />
           <div className={styles.title}>{advantage.title}</div>
           <hr className={styles.line} />
