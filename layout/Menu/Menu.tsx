@@ -77,7 +77,7 @@ export const Menu = (): JSX.Element => {
 
   const buildThirdLevel = (pages: PageItem[], route: string) => {
     return pages.map((page) => (
-      <Link legacyBehavior key={page.id} href={`/${route}/${page.alias}`}>
+      <Link legacyBehavior href={`/${route}/${page.alias}`} key={page.title}>
         <a
           className={cn(styles.thirdLevel, {
             [styles.thirdLevelActive]: `/${route}/${page.alias}` === router.asPath,
