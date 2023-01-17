@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import cn from "classnames";
 
@@ -11,8 +11,18 @@ import { deklinationOfWord, priceRu } from "../../helpers/helpers";
 export const Product = ({ className, product, ...props }: ProductProps): JSX.Element => {
   const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
 
+  const reviewRef = useRef<HTMLDivElement>(null);
+
+  const scrollToReview = () => {
+    setIsReviewOpened(true);
+    reviewRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
-    <>
+    <div className={className} {...props}>
       <Card className={styles.product}>
         <div className={styles.logo}>
           <Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70} />
@@ -47,7 +57,9 @@ export const Product = ({ className, product, ...props }: ProductProps): JSX.Ele
         <div className={styles.priceTitle}>цена</div>
         <div className={styles.creditTitle}>кредит</div>
         <div className={styles.rateTitle}>
-          {product.reviewCount} {deklinationOfWord(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
+          <a href="#ref" onClick={scrollToReview}>
+            {product.reviewCount} {deklinationOfWord(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
+          </a>
         </div>
         <Divider className={styles.hr} />
         <div className={styles.description}>{product.description} </div>
@@ -97,6 +109,7 @@ export const Product = ({ className, product, ...props }: ProductProps): JSX.Ele
           [styles.opened]: isReviewOpened,
           [styles.closed]: !isReviewOpened,
         })}
+        ref={reviewRef}
       >
         {product.reviews.map((review) => (
           <div key={review.title}>
@@ -106,6 +119,6 @@ export const Product = ({ className, product, ...props }: ProductProps): JSX.Ele
         ))}
         <ReviewForm productId={product.id} />
       </Card>
-    </>
+    </div>
   );
 };
