@@ -27,7 +27,7 @@ export const Rating = forwardRef(
             onMouseEnter={() => changeDisplay(index + 1)}
             onMouseLeave={() => changeDisplay(rating)}
             onClick={() => onClick(index + 1)}
-            key="index"
+            key={index}
           >
             <StarIcon
               tabIndex={isEditable ? 0 : -1}
