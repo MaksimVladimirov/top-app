@@ -9,7 +9,6 @@ import styles from "./Product.module.css";
 
 import { deklinationOfWord, priceRu } from "../../helpers/helpers";
 
-
 export const Product = motion(
   forwardRef(({ className, product, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
     const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
@@ -21,6 +20,7 @@ export const Product = motion(
       reviewRef.current?.scrollIntoView({
         behavior: "smooth",
       });
+      reviewRef.current?.focus();
     };
 
     const variants = {
@@ -114,14 +114,14 @@ export const Product = motion(
         </Card>
 
         <motion.div animate={isReviewOpened ? "visible" : "hidden"} variants={variants} initial="hidden">
-          <Card color="blue" className={styles.reviews} ref={reviewRef}>
+          <Card color="blue" className={styles.reviews} ref={reviewRef} tabIndex={isReviewOpened ? 0 : -1}>
             {product.reviews.map((review) => (
               <div key={review.title}>
                 <Review review={review} />
                 <Divider />
               </div>
             ))}
-            <ReviewForm productId={product.id} />
+            <ReviewForm productId={product.id} isOpened={isReviewOpened} />
           </Card>
         </motion.div>
       </div>

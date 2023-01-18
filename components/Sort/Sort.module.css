@@ -19,14 +19,18 @@
   gap: 43px;
 }
 
-.sort span {
+.sort button {
   display: grid;
   grid-template-columns: 20px 1fr;
   gap: 8px;
   align-items: center;
   cursor: pointer;
+  border: none;
+  font-size:  1rem;
+  line-height: 1.2rem;
+  background: none;
 }
 
-.sort span:not(.active) {
+.sort button:not(.active) {
   grid-template-columns: 1fr;
 }

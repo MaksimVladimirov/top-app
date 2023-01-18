@@ -33,8 +33,7 @@
   transform: rotate(90deg);
   transition: all 0.2s;
 }
-.right {
-}
+
 .primary svg,
 .ghost:hover svg {
   padding-top: 1px;
