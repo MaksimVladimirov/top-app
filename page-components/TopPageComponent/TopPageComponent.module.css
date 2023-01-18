@@ -35,3 +35,14 @@
   line-height: 27px;
   margin: 0;
 }
+
+.productsTag {
+    position: relative;
+    bottom: 2px;
+}
+
+@media (max-width: 640px) {
+    .title {
+        grid-template-columns: auto 1fr;
+    }
+}

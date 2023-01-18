@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import cn from "classnames";
 
 import styles from "./Button.module.css";
