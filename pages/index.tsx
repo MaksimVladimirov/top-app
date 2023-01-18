@@ -7,9 +7,9 @@ import { withLayout } from "../layout/Layout";
 import { MenuItem } from "../interfaces/menu.interface";
 import { API } from "../helpers/api";
 
-
 function Home({ menu }: HomeProps): JSX.Element {
   const [rating, setRating] = useState<number>(4);
+
   return (
     <>
       <Htag tag="h1"> Header </Htag>
@@ -32,8 +32,8 @@ function Home({ menu }: HomeProps): JSX.Element {
       <Tag color="primary">lol</Tag>
       <Rating rating={4} isEditable />
       <Rating rating={rating} isEditable setRating={setRating} />
-      <Input placeholder="Имя"/>
-      <Textarea placeholder="Текст отзыва"/>
+      <Input placeholder="Имя" />
+      <Textarea placeholder="Текст отзыва" />
     </>
   );
 }
