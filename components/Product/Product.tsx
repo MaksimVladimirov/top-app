@@ -1,5 +1,4 @@
 import { useState, useRef, forwardRef, ForwardedRef } from "react";
-import Image from "next/image";
 import cn from "classnames";
 import { motion } from "framer-motion";
 
@@ -35,7 +34,7 @@ export const Product = motion(
       <div className={className} {...props} ref={ref}>
         <Card className={styles.product}>
           <div className={styles.logo}>
-            <Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70} />
+            <img src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70} />
           </div>
           <div className={styles.title}>{product.title}</div>
 
