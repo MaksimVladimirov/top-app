@@ -44,6 +44,7 @@ export const Rating = forwardRef(
             onClick={() => onClick(index + 1)}
             tabIndex={computedFocus(rating, index)}
             onKeyDown={handleKey}
+            key={index}
             ref={(r) => ratingArrayRef.current?.push(r)}
           >
             <StarIcon />
