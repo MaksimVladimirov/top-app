@@ -52,7 +52,7 @@ export const Product = motion(
 
           <div className={styles.credit}>
             <span className="visuallyHidden">кредит</span>
-            {priceRu(product.credit)}/<span className={styles.mounth}>мес</span>
+            {priceRu(product.credit)} /<span className={styles.mounth}>мес</span>
           </div>
 
           <div className={styles.rating}>
