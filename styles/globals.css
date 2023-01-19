@@ -33,3 +33,9 @@ a {
 /* html {
   font-size: 62.5%;
 } */
+.visuallyHidden {
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  position: absolute;
+}

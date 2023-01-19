@@ -1,5 +1,4 @@
 import { useState, useRef, forwardRef, ForwardedRef } from "react";
-import Image from "next/image";
 import cn from "classnames";
 import { motion } from "framer-motion";
 
@@ -35,24 +34,29 @@ export const Product = motion(
       <div className={className} {...props} ref={ref}>
         <Card className={styles.product}>
           <div className={styles.logo}>
-            <Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70} />
+            <img src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70} />
           </div>
           <div className={styles.title}>{product.title}</div>
 
           <div className={styles.price}>
-            {priceRu(product.price)}
+            <span>
+              <span className="visuallyHidden"> цена</span> {priceRu(product.price)}
+            </span>
             {product.oldPrice && (
               <Tag className={styles.oldPrice} color="green">
+                <span className="visuallyHidden">скидка</span>
                 {priceRu(product.price - product.oldPrice)}
               </Tag>
             )}
           </div>
 
           <div className={styles.credit}>
-            {priceRu(product.credit)}/<span className={styles.mounth}>мес</span>
+            <span className="visuallyHidden">кредит</span>
+            {priceRu(product.credit)} /<span className={styles.mounth}>мес</span>
           </div>
 
           <div className={styles.rating}>
+            <span className="visuallyHidden">{"рейтинг" + (product.reviewAvg ?? product.initialRating)}</span>
             <Rating rating={product.reviewAvg ?? product.initialRating} />
           </div>
 
@@ -64,8 +68,12 @@ export const Product = motion(
             ))}
           </div>
 
-          <div className={styles.priceTitle}>цена</div>
-          <div className={styles.creditTitle}>кредит</div>
+          <div className={styles.priceTitle} aria-hidden={true}>
+            цена
+          </div>
+          <div className={styles.creditTitle} aria-hidden={true}>
+            кредит
+          </div>
           <div className={styles.rateTitle}>
             <a href="#ref" onClick={scrollToReview}>
               {product.reviewCount} {deklinationOfWord(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
@@ -107,6 +115,7 @@ export const Product = motion(
               arrow={isReviewOpened ? "down" : "right"}
               className={styles.reviewButton}
               onClick={() => setIsReviewOpened(!isReviewOpened)}
+              aria-expanded={isReviewOpened}
             >
               Читать отзывы
             </Button>

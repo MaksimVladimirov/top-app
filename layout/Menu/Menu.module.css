@@ -14,6 +14,11 @@
   margin-top: 20px;
 }
 
+.firstLevelList {
+  list-style: none;
+  padding: 0;
+}
+
 .firstLevelActive,
 .firstLevel:hover {
   color: var(--primary);
@@ -39,7 +44,8 @@
 .secondBlock {
   margin-left: 12px;
   margin-top: 15px;
-  padding-left: 32px;
+  list-style: none;
+  padding: 0 0 0 32px;
   border-left: 1px solid #dfdfdf;
 }
 
@@ -48,7 +54,6 @@
   list-style: none;
   padding: 0;
 }
-
 
 .thirdLevel {
   margin-bottom: 10px;
