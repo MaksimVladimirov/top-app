@@ -12,3 +12,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 function sayHello() {
   console.log("Hello user")
 }
+function sayHello2() {
+  console.log("Hello user");
+}
