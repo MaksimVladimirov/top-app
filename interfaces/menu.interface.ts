@@ -21,7 +21,3 @@ export interface FirstLevelMenuItem {
   icon: JSX.Element;
   id: TopLevelCategory;
 }
-
-export interface ThirdLevelCategory {
-  ggg: string
-}

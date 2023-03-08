@@ -6,7 +6,7 @@ import { MenuItem } from "../interfaces/menu.interface";
 import { API } from "../helpers/api";
 
 function Search(): JSX.Element {
-
+  
   return (
     <>
       Search
